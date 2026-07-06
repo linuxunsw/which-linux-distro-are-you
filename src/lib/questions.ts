@@ -47,6 +47,14 @@ const questions: Question[] = [
       earlyAdopter: -1,
     },
   },
+  {
+    q: 'Did you just lose the game?',
+    bounds: ['what?', 'GOD DAMN IT!'],
+    buffs: {
+      memetic: 5,
+      oldSoul: 3,
+    },
+  },
   // TODO: More
 ];
 
