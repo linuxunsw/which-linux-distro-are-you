@@ -55,6 +55,22 @@ const questions: Question[] = [
       oldSoul: 3,
     },
   },
+  {
+    q: 'I have too much screentime',
+    buffs: {
+      memetic: 4,
+      disorganised: 3,
+    },
+  },
+  {
+    q: 'Using AI is a terrible idea',
+    bounds: ['No I love claude <3', 'yeah AI sucks'],
+    buffs: {
+      diy: 4,
+      judgemental: 2,
+      earlyAdopter: -3,
+    },
+  }
   // TODO: More
 ];
 
