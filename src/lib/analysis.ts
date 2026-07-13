@@ -1,7 +1,7 @@
 import { metrics, type Metric } from '$lib';
 import distros, { type Distro } from './distros';
 import type { Question } from './questions';
-import { assert, shuffled } from './util';
+import { assert, sample, shuffled } from './util';
 
 export type QandA = {
   /** Question being answered */
@@ -84,15 +84,20 @@ export function getMatchingDistro(qandas: QandA[]): [Distro, Metric] {
 
   assert(match !== undefined, 'No bitches?');
 
-  let mostRelevantMetric: Metric | undefined = undefined;
+  // Track a full array of relevant metrics to make it less likely to
+  // favor earlier metrics.
+  let mostRelevantMetrics: Metric[] = [];
   matchDiff = 999999999999999;
   for (const metric of metrics) {
-    if (Math.abs(personality[metric] - match[metric].value) < matchDiff) {
-      mostRelevantMetric = metric;
+    const thisDiff = Math.abs(personality[metric] - match[metric].value);
+    if (thisDiff < matchDiff) {
+      mostRelevantMetrics = [metric];
+    } else if (thisDiff === matchDiff) {
+      mostRelevantMetrics.push(metric);
     }
   }
 
-  assert(mostRelevantMetric !== undefined, 'No relevance?');
+  assert(mostRelevantMetrics !== undefined, 'No relevance?');
 
-  return [match, mostRelevantMetric];
+  return [match, sample(mostRelevantMetrics, 1)[0]];
 }
