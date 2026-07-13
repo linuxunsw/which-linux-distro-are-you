@@ -84,7 +84,7 @@ const distros: Distro[] = [
     },
     judgemental: {
       value: 2,
-      rationale: '',
+      rationale: 'judgemental',
     },
   },
   {
@@ -92,7 +92,7 @@ const distros: Distro[] = [
     name: 'Fedora Linux',
     diy: {
       value: 5,
-      rationale: 'TODO',
+      rationale: 'diy',
     },
     disorganised: {
       value: 7,
@@ -119,7 +119,7 @@ const distros: Distro[] = [
     },
     judgemental: {
       value: 0,
-      rationale: '',
+      rationale: 'judgemental',
     },
   },
   {
@@ -132,27 +132,27 @@ const distros: Distro[] = [
     // TODO
     disorganised: {
       value: 0,
-      rationale: '',
+      rationale: 'disorganised',
     },
     earlyAdopter: {
       value: 0,
-      rationale: '',
+      rationale: 'earlyAdopter',
     },
     memetic: {
       value: 0,
-      rationale: '',
+      rationale: 'memetic',
     },
     unc: {
       value: 0,
-      rationale: '',
+      rationale: 'unc',
     },
     reliable: {
       value: 0,
-      rationale: '',
+      rationale: 'reliable',
     },
     judgemental: {
       value: 0,
-      rationale: '',
+      rationale: 'judgemental',
     },
   },
   {
@@ -160,7 +160,7 @@ const distros: Distro[] = [
     name: 'Manjaro',
     diy: {
       value: 6,
-      rationale: '',
+      rationale: 'diy',
     },
     // Forgetting to renew your SSL 3 times is very funny
     disorganised: {
@@ -169,16 +169,16 @@ const distros: Distro[] = [
     },
     earlyAdopter: {
       value: 9,
-      rationale: 'TODO',
+      rationale: 'earlyAdopter',
     },
     memetic: {
       value: 3,
-      rationale: 'TODO',
+      rationale: 'memetic',
     },
     // 14 years old
     unc: {
       value: 2,
-      rationale: 'TODO',
+      rationale: 'You appear to have the same age.',
     },
     reliable: {
       value: 2,
@@ -186,7 +186,7 @@ const distros: Distro[] = [
     },
     judgemental: {
       value: 0,
-      rationale: '',
+      rationale: 'judgemental',
     },
   },
   {
@@ -199,7 +199,7 @@ const distros: Distro[] = [
     // They've had some pretty significant management disasters
     disorganised: {
       value: 8,
-      rationale: 'TODO',
+      rationale: 'disorganised',
     },
     earlyAdopter: {
       value: 5,
@@ -207,7 +207,7 @@ const distros: Distro[] = [
     },
     memetic: {
       value: 0,
-      rationale: 'TODO',
+      rationale: 'memetic',
     },
     // 20 years old, but the Nix language doesn't feel especially nice to work with, and the CLI
     // tools are not especially pleasant without 3rd-party wrappers.
@@ -230,11 +230,11 @@ const distros: Distro[] = [
     name: 'Slackware',
     diy: {
       value: 7,
-      rationale: 'TODO',
+      rationale: 'diy',
     },
     disorganised: {
       value: 0,
-      rationale: '',
+      rationale: 'disorganised',
     },
     // Slowest-moving distro ever?
     earlyAdopter: {
@@ -253,11 +253,11 @@ const distros: Distro[] = [
     // idk?
     reliable: {
       value: 0,
-      rationale: 'TODO',
+      rationale: 'reliable',
     },
     judgemental: {
       value: 0,
-      rationale: '',
+      rationale: 'judgemental',
     },
   },
   {
@@ -265,11 +265,11 @@ const distros: Distro[] = [
     name: 'Ubuntu',
     diy: {
       value: 2,
-      rationale: '',
+      rationale: 'diy',
     },
     disorganised: {
       value: 4,
-      rationale: '',
+      rationale: 'disorganised',
     },
     // Rewriting all coreutils in rust, and making that the default with barely 6 months of
     // dogfooding in 25.10 before it hit LTS...
@@ -279,22 +279,22 @@ const distros: Distro[] = [
     },
     memetic: {
       value: 0,
-      rationale: 'TODO',
+      rationale: 'memetic',
     },
     // Has apt gotten any better recently?
     unc: {
       value: 5,
-      rationale: 'TODO',
+      rationale: 'unc',
     },
     // Maddy personally ran into pretty significant issues when she used it. Idk if that matches
     // everyone else though.
     reliable: {
       value: 4,
-      rationale: 'TODO',
+      rationale: 'reliable',
     },
     judgemental: {
       value: 0,
-      rationale: '',
+      rationale: 'judgemental',
     },
   },
 ];
