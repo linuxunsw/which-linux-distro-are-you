@@ -80,6 +80,34 @@ const questions: Question[] = [
       unc: 1,
     },
   },
+  {
+    q: 'I sometimes scroll through every setting on a device so I can adjust everything',
+    bounds: ['I have no preferences', 'My configurations are a work of art'],
+    buffs: {
+      diy: 2,
+      judgemental: 3,
+      disorganised: -1,
+    },
+  },
+  {
+    q: 'I morally oppose minimalism',
+    bounds: ['Simplicity is beauty', "If it's worth doing, it's worth overdoing"],
+    buffs: {
+      disorganised: 2,
+      reliable: -2,
+      diy: 1,
+      unc: 1,
+    },
+  },
+  {
+    q: 'I already have an opinion on which distro best-matches my personality, and am seeking affirmation.',
+    bounds: ['Nope', 'I will be greatly upset if this internet quiz guesses my distro of choice wrong'],
+    buffs: {
+      judgemental: 3,
+      earlyAdopter: 1,
+      diy: 2,
+    },
+  },
   // TODO: More
 ];
 
