@@ -22,7 +22,7 @@ function defaultPersonality(): Personality {
     memetic: 0,
     unc: 0,
     reliable: 0,
-    judgemental: 0,
+    judgmental: 0,
   };
 }
 

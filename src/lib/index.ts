@@ -13,7 +13,7 @@ export const metrics = [
   /** Will they work consistently? Are they easy to accidentally break? */
   'reliable',
   /** How much does this person/distro judge others with different opinions */
-  'judgemental',
+  'judgmental',
 ] as const;
 
 export type Metric = typeof metrics[number];

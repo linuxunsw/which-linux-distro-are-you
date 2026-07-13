@@ -47,7 +47,7 @@ const distros: Distro[] = [
       value: 1,
       rationale: 'You need to be updated frequently or everything will break',
     },
-    judgemental: {
+    judgmental: {
       value: 9,
       rationale: "It's ok that you push your opinions hard, because you're right (according to you)",
     },
@@ -82,7 +82,7 @@ const distros: Distro[] = [
       value: 5,
       rationale: "You're great at familiar things, but become Frankenstein's Monster if new things are added",
     },
-    judgemental: {
+    judgmental: {
       value: 2,
       rationale: 'judgemental',
     },
@@ -117,7 +117,7 @@ const distros: Distro[] = [
       value: 8,
       rationale: 'You stay consistent even as things change around you.',
     },
-    judgemental: {
+    judgmental: {
       value: 0,
       rationale: 'judgemental',
     },
@@ -127,7 +127,7 @@ const distros: Distro[] = [
     name: 'Gentoo Linux',
     diy: {
       value: 10,
-      rationale: "Is it even yours if you don't build it yourself?",
+      rationale: "Are things even yours if you don't build them yourself?",
     },
     // TODO
     disorganised: {
@@ -135,8 +135,8 @@ const distros: Distro[] = [
       rationale: 'disorganised',
     },
     earlyAdopter: {
-      value: 0,
-      rationale: 'earlyAdopter',
+      value: 9,
+      rationale: "If your computer was faster at code compilation, you'd be running up-to-date software.",
     },
     memetic: {
       value: 0,
@@ -147,12 +147,12 @@ const distros: Distro[] = [
       rationale: 'unc',
     },
     reliable: {
-      value: 0,
+      value: 8,
       rationale: 'reliable',
     },
-    judgemental: {
-      value: 0,
-      rationale: 'judgemental',
+    judgmental: {
+      value: 7,
+      rationale: 'Your group project teammates diagnose you with control freak.',
     },
   },
   {
@@ -184,7 +184,7 @@ const distros: Distro[] = [
       value: 2,
       rationale: 'You fall apart often for inscrutible reasons.',
     },
-    judgemental: {
+    judgmental: {
       value: 0,
       rationale: 'judgemental',
     },
@@ -199,7 +199,7 @@ const distros: Distro[] = [
     // They've had some pretty significant management disasters
     disorganised: {
       value: 8,
-      rationale: 'disorganised',
+      rationale: 'You either take group assignments way too seriously or not seriously enough.',
     },
     earlyAdopter: {
       value: 5,
@@ -220,7 +220,7 @@ const distros: Distro[] = [
       value: 10,
       rationale: "You've never broken a bone in your body.",
     },
-    judgemental: {
+    judgmental: {
       value: 7,
       rationale: "You think you know better than everyone (you're probably right)",
     },
@@ -230,11 +230,12 @@ const distros: Distro[] = [
     name: 'Slackware',
     diy: {
       value: 7,
-      rationale: 'diy',
+      rationale: 'Your todo lists are long and detailed, and by god they need to be.',
     },
     disorganised: {
-      value: 0,
-      rationale: 'disorganised',
+      // Many different package managers all with slightly different quirks
+      value: 7,
+      rationale: 'Please I am begging you to tidy your files up.',
     },
     // Slowest-moving distro ever?
     earlyAdopter: {
@@ -252,11 +253,12 @@ const distros: Distro[] = [
     },
     // idk?
     reliable: {
-      value: 0,
-      rationale: 'reliable',
+      value: 6,
+      rationale: 'Your todo lists are long and detailed, and by god they need to be.',
     },
-    judgemental: {
-      value: 0,
+    judgmental: {
+      // Maddy: found moderate judgment of people's decisions when I perused their subreddit.
+      value: 3,
       rationale: 'judgemental',
     },
   },
@@ -264,8 +266,8 @@ const distros: Distro[] = [
     id: 'ubuntu',
     name: 'Ubuntu',
     diy: {
-      value: 2,
-      rationale: 'diy',
+      value: 1,
+      rationale: 'You could at least change the wallpaper on your laptop',
     },
     disorganised: {
       value: 4,
@@ -275,11 +277,11 @@ const distros: Distro[] = [
     // dogfooding in 25.10 before it hit LTS...
     earlyAdopter: {
       value: 7,
-      rationale: "Maybe you don't need to try every new thing immediately.",
+      rationale: "Maybe you don't need to try every new thing immediately. Like seriously, please stop.",
     },
     memetic: {
-      value: 0,
-      rationale: 'memetic',
+      value: 1,
+      rationale: 'Did you know: "Ubuntu" is a Nguni word meaning "I don\'t know how to install Debian".',
     },
     // Has apt gotten any better recently?
     unc: {
@@ -292,7 +294,7 @@ const distros: Distro[] = [
       value: 4,
       rationale: 'reliable',
     },
-    judgemental: {
+    judgmental: {
       value: 0,
       rationale: 'judgemental',
     },

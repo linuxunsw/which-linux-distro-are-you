@@ -33,7 +33,7 @@ const questions: Question[] = [
     q: "I don't think I could ever use an Android phone",
     bounds: ['I am literally using one right now', 'Sent from my iPhone'],
     buffs: {
-      judgemental: 3,
+      judgmental: 3,
       earlyAdopter: -1,
     },
   },
@@ -67,7 +67,7 @@ const questions: Question[] = [
     bounds: ['No I love claude <3', 'yeah AI sucks'],
     buffs: {
       diy: 4,
-      judgemental: 2,
+      judgmental: 2,
       earlyAdopter: -3,
       reliable: 2,
     },
@@ -85,7 +85,7 @@ const questions: Question[] = [
     bounds: ['I have no preferences', 'My configurations are a work of art'],
     buffs: {
       diy: 2,
-      judgemental: 3,
+      judgmental: 3,
       disorganised: -1,
     },
   },
@@ -103,7 +103,7 @@ const questions: Question[] = [
     q: 'I already have an opinion on which distro best-matches my personality, and am seeking affirmation.',
     bounds: ['Nope', 'I will be greatly upset if this internet quiz guesses my distro of choice wrong'],
     buffs: {
-      judgemental: 3,
+      judgmental: 3,
       earlyAdopter: 1,
       diy: 2,
     },
