@@ -69,6 +69,15 @@ const questions: Question[] = [
       diy: 4,
       judgemental: 2,
       earlyAdopter: -3,
+      reliable: 2,
+    },
+  },
+  {
+    q: 'I am confident at navigating a computer using a terminal',
+    bounds: ["What's a terminal?", 'Can I show you my tmux config?'],
+    buffs: {
+      diy: 3,
+      unc: 1,
     },
   },
   // TODO: More
