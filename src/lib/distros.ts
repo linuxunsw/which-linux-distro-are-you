@@ -8,6 +8,8 @@ export type Rating = {
 };
 
 export type Distro = {
+  /** Unique id */
+  id: string,
   /** Human-friendly name */
   name: string,
 } & Record<Metric, Rating>;
@@ -15,8 +17,9 @@ export type Distro = {
 // Please try to keep these alphabetised if you add more distros.
 // TODO: Currently, most of these have place-holder values. If you have experience with a distro, or
 // know enough about it, feel free to fill things in.
-const distros: Record<string, Distro> = {
-  arch: {
+const distros: Distro[] = [
+  {
+    id: 'arch',
     name: 'Arch Linux',
     diy: {
       value: 9,
@@ -49,7 +52,8 @@ const distros: Record<string, Distro> = {
       rationale: "It's ok that you push your opinions hard, because you're right (according to you)",
     },
   },
-  debian: {
+  {
+    id: 'debian',
     name: 'Debian',
     diy: {
       value: 6,
@@ -83,7 +87,8 @@ const distros: Record<string, Distro> = {
       rationale: '',
     },
   },
-  fedora: {
+  {
+    id: 'fedora',
     name: 'Fedora Linux',
     diy: {
       value: 5,
@@ -117,7 +122,8 @@ const distros: Record<string, Distro> = {
       rationale: '',
     },
   },
-  gentoo: {
+  {
+    id: 'gentoo',
     name: 'Gentoo Linux',
     diy: {
       value: 10,
@@ -149,7 +155,8 @@ const distros: Record<string, Distro> = {
       rationale: '',
     },
   },
-  manjaro: {
+  {
+    id: 'manjaro',
     name: 'Manjaro',
     diy: {
       value: 6,
@@ -182,7 +189,8 @@ const distros: Record<string, Distro> = {
       rationale: '',
     },
   },
-  nixos: {
+  {
+    id: 'nixos',
     name: 'NixOS',
     diy: {
       value: 10,
@@ -217,7 +225,8 @@ const distros: Record<string, Distro> = {
       rationale: "You think you know better than everyone (you're probably right)",
     },
   },
-  slackware: {
+  {
+    id: 'slackware',
     name: 'Slackware',
     diy: {
       value: 7,
@@ -251,7 +260,8 @@ const distros: Record<string, Distro> = {
       rationale: '',
     },
   },
-  ubuntu: {
+  {
+    id: 'ubuntu',
     name: 'Ubuntu',
     diy: {
       value: 2,
@@ -287,6 +297,6 @@ const distros: Record<string, Distro> = {
       rationale: '',
     },
   },
-};
+];
 
 export default distros;

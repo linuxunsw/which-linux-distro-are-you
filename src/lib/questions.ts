@@ -70,7 +70,7 @@ const questions: Question[] = [
       judgemental: 2,
       earlyAdopter: -3,
     },
-  }
+  },
   // TODO: More
 ];
 
