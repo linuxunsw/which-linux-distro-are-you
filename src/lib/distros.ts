@@ -35,7 +35,7 @@ const distros: Record<string, Distro> = {
       rationale: 'btw',
     },
     // 24 years young, feels quite modern in its design still?
-    oldSoul: {
+    unc: {
       value: 3,
       rationale: 'Arch is young at heart and so are you!',
     },
@@ -69,7 +69,7 @@ const distros: Record<string, Distro> = {
       rationale: '[grandma voice] what is a meme?',
     },
     // 32 years old
-    oldSoul: {
+    unc: {
       value: 9,
       rationale: "You definitely don't suffer from Shiny New Stuff Syndrome.",
     },
@@ -103,7 +103,7 @@ const distros: Record<string, Distro> = {
       rationale: "m'lady",
     },
     // DNF5 is v nice
-    oldSoul: {
+    unc: {
       value: 4,
       rationale: 'Despite your age, you are definitely not unc.',
     },
@@ -136,7 +136,7 @@ const distros: Record<string, Distro> = {
       value: 0,
       rationale: '',
     },
-    oldSoul: {
+    unc: {
       value: 0,
       rationale: '',
     },
@@ -169,7 +169,7 @@ const distros: Record<string, Distro> = {
       rationale: 'TODO',
     },
     // 14 years old
-    oldSoul: {
+    unc: {
       value: 2,
       rationale: 'TODO',
     },
@@ -203,7 +203,7 @@ const distros: Record<string, Distro> = {
     },
     // 20 years old, but the Nix language doesn't feel especially nice to work with, and the CLI
     // tools are not especially pleasant without 3rd-party wrappers.
-    oldSoul: {
+    unc: {
       value: 8,
       rationale: 'You might be painful to work with, but you get sh*t done.',
     },
@@ -237,7 +237,7 @@ const distros: Record<string, Distro> = {
       rationale: 'The last meme that downloaded on your dial-up connection was Nyan Cat.',
     },
     // Very old tooling
-    oldSoul: {
+    unc: {
       value: 10,
       rationale: "If computers had floppy drives, you'd be using them.",
     },
@@ -272,7 +272,7 @@ const distros: Record<string, Distro> = {
       rationale: 'TODO',
     },
     // Has apt gotten any better recently?
-    oldSoul: {
+    unc: {
       value: 5,
       rationale: 'TODO',
     },

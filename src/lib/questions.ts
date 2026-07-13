@@ -41,7 +41,7 @@ const questions: Question[] = [
     q: '69 is a funnier number than 67',
     bounds: ['67676767676767', 'Nice'],
     buffs: {
-      oldSoul: 5,
+      unc: 5,
       // 69 is a much older meme now
       memetic: -2,
       earlyAdopter: -1,
@@ -52,7 +52,7 @@ const questions: Question[] = [
     bounds: ['what?', 'GOD DAMN IT!'],
     buffs: {
       memetic: 5,
-      oldSoul: 3,
+      unc: 3,
     },
   },
   {
