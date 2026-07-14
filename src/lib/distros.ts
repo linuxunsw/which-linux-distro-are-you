@@ -61,7 +61,7 @@ const distros: Distro[] = [
     },
     disorganised: {
       value: 3,
-      rationale: 'You don\'t really care about organisation, as long as it works for you.',
+      rationale: "You don't really care about organisation, as long as it works for you.",
     },
     earlyAdopter: {
       value: 3,
