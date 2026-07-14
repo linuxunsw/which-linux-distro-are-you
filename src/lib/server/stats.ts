@@ -116,9 +116,15 @@ const factoids: FactoidGenerator[] = [
 
     return `${judgementalContribs.length / groupProjectContribs.length * 100}% of group-project contributors are judgemental of others.`;
   },
+  /** IKEA lover count */
+  (data) => {
+    const ikeaLovers = data.filter(result => 'ikea' in result.qandas && result.qandas.ikea >= 3);
+    return `So far, ${ikeaLovers.length} IKEA fans have taken this quiz.`;
+  },
   // TODO: More factoids. Some ideas:
-  // How many configaholics made the mistake of using an iPhone.
-  // Do people who think 69 is funny remember The Game?
+  // - How many configaholics made the mistake of using an iPhone?
+  // - Do people who think 69 is funny remember The Game?
+  // - Do heavy terminal users have a strong distro preference?
 ];
 
 function averagePersonality(data: ResponseStats): Personality {
