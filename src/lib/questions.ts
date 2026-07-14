@@ -2,16 +2,16 @@ import type { Metric } from '$lib';
 
 export type Answer = {
   /** The answer text */
-  a: string,
+  a: string;
 };
 
 export type Question = {
   /** The statement, which the user agrees/disagrees with */
-  q: string,
+  q: string;
   /** Text to place on the left/right of the scale. Defaults to `['Disagree', 'Agree']`. */
-  bounds?: [string, string],
+  bounds?: [string, string];
   /** The adjustments that selecting this answer makes to the player's point scores. */
-  buffs: Partial<Record<Metric, number>>,
+  buffs: Partial<Record<Metric, number>>;
 };
 
 const questions: Question[] = [
@@ -91,10 +91,7 @@ const questions: Question[] = [
   },
   {
     q: 'I morally oppose minimalism',
-    bounds: [
-      'Simplicity is beauty',
-      "If it's worth doing, it's worth overdoing",
-    ],
+    bounds: ['Simplicity is beauty', "If it's worth doing, it's worth overdoing"],
     buffs: {
       disorganised: 2,
       reliable: -2,

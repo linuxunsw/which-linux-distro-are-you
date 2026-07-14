@@ -15,12 +15,15 @@
 </script>
 
 {#if qandas.length < quiz.length}
-  <Question q={quiz[qandas.length]} onsubmit={(a) => {
-    qandas.push({
-      q: quiz[qandas.length],
-      a,
-    });
-  }} />
+  <Question
+    q={quiz[qandas.length]}
+    onsubmit={(a) => {
+      qandas.push({
+        q: quiz[qandas.length],
+        a,
+      });
+    }}
+  />
 {:else}
   <Results {qandas} onreset={reset} />
 {/if}

@@ -16,4 +16,4 @@ export const metrics = [
   'judgmental',
 ] as const;
 
-export type Metric = typeof metrics[number];
+export type Metric = (typeof metrics)[number];
