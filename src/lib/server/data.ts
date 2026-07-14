@@ -2,37 +2,14 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { DATA_PATH } from './consts';
 import { dev } from '$app/environment';
-import type { Results } from '../../routes/api/results/+server';
+import type { SubmittedResults } from '../../routes/api/results/+server';
 
 const STATS_FILE = path.join(DATA_PATH, 'stats.json');
 
-export type ResponseStats = {
-  /** Frequency of distro recommendations */
-  distros: Record<string, number>,
-  /**
-   * Array of personalities of users.
-   *
-   * Note: not using the specific metrics here, as we cannot guarantee that we won't add more
-   * metrics over the course of the day, meaning not all metrics will exist in all submitted
-   * personalities.
-   */
-  personalities: Record<string, number>[],
-  /**
-   * Set of answers submitted by users.
-   *
-   * - Each key is a question ID.
-   * - Each value is an array of the corresponding answers (scale of 0-4 inclusive).
-   *   Eg: [0, 1, 2] would indicate that the first user selected `1`, the second selected `2`, etc.
-   */
-  qandas: Record<string, number[]>,
-};
+export type ResponseStats = SubmittedResults[];
 
 function defaultData(): ResponseStats {
-  return {
-    distros: {},
-    personalities: [],
-    qandas: {},
-  };
+  return [];
 }
 
 async function loadData() {
@@ -62,17 +39,10 @@ export async function getData(): Promise<ResponseStats> {
   return dataCache;
 }
 
-export async function submitResults(results: Results) {
+export async function submitResults(results: SubmittedResults) {
   const data = await getData();
 
-  data.distros[results.distro] = (data.distros[results.distro] ?? 0) + 1;
-
-  data.personalities.push(results.personality);
-
-  for (const [q, a] of Object.entries(results.qandas)) {
-    data.qandas[q] ??= [];
-    data.qandas[q].push(a);
-  }
+  data.push(results);
 
   await saveData(data);
 }

@@ -21,7 +21,7 @@ const Schema = v.object({
   qandas: v.record(v.string(), v.number()),
 });
 
-export type Results = v.InferOutput<typeof Schema>;
+export type SubmittedResults = v.InferOutput<typeof Schema>;
 
 export async function POST({ request }) {
   const results = v.parse(Schema, await request.json());

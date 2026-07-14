@@ -73,9 +73,9 @@ type FactoidGenerator = (data: ResponseStats) => string;
 const factoids: FactoidGenerator[] = [
   /** unc percent */
   (data) => {
-    const uncablePersonalities = data.personalities.filter(personality => 'unc' in personality);
-    const avg = uncablePersonalities.reduce((sum, personality) => sum + personality.unc, 0)
-      / uncablePersonalities.length;
+    const uncableResults = data.filter(result => 'unc' in result.personality);
+    const avg = uncableResults.reduce((sum, result) => sum + result.personality.unc, 0)
+      / uncableResults.length;
     return `The average person is ${avg * 10}% unc.`;
   },
   // TODO: More factoids
@@ -85,8 +85,10 @@ function averagePersonality(data: ResponseStats): Personality {
   const personality = defaultPersonality();
 
   for (const metric of metrics) {
-    personality[metric] = data.personalities
-      .reduce((sum, personality) => sum + personality[metric], 0);
+    const resultsWithMetric = data.filter(result => metric in result.personality);
+    personality[metric] = resultsWithMetric
+      .reduce((sum, result) => sum + result.personality[metric], 0)
+      / resultsWithMetric.length;
   }
 
   return personality;
@@ -94,7 +96,8 @@ function averagePersonality(data: ResponseStats): Personality {
 
 function questionStats(question: string, data: ResponseStats) {
   const frequencies: AnswerHistogram = [0, 0, 0, 0, 0];
-  for (const answer of (data.qandas[question] ?? [])) {
+  for (const result of data.filter(result => question in result.qandas)) {
+    const answer = result.qandas[question];
     frequencies[answer] = (frequencies[answer] ?? 0) + 1;
   }
   return frequencies;
