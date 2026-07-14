@@ -272,6 +272,7 @@ const distros: Distro[] = [
   {
     id: 'slackware',
     name: 'Slackware',
+    // Yes, you read that right, Slackware does not support HTTPS
     url: 'http://www.slackware.com/',
     diy: {
       value: 7,
@@ -285,7 +286,7 @@ const distros: Distro[] = [
     // Slowest-moving distro ever?
     earlyAdopter: {
       value: 0,
-      rationale: 'Life was better in the 90s.',
+      rationale: 'Nobody can force you to have a secure website.',
     },
     memetic: {
       value: 0,
@@ -304,7 +305,7 @@ const distros: Distro[] = [
     judgmental: {
       // Maddy: found moderate judgment of people's decisions when I perused their subreddit.
       value: 3,
-      rationale: 'judgemental',
+      rationale: 'Some of your opinions probably should have changed since the 90s.',
     },
   },
   {
