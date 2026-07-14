@@ -1,6 +1,6 @@
 import * as v from 'valibot';
 import { json } from '@sveltejs/kit';
-import { submitResults } from '$lib/server/stats.js';
+import { submitResults } from '$lib/server/data';
 
 const Schema = v.object({
   /** The ID of the distro which was recommended */
