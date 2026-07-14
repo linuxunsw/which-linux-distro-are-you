@@ -64,7 +64,7 @@ function calculatePersonality(qandas: QandA[]): Personality {
 function distroDiff(d: Distro, p: Personality): number {
   // TODO: Consider some kind of non-linear scaling here to punish larger deviations from the distro
   // so that users get things that have a closer "vibe".
-  return metrics.reduce((sum, metric) => sum + p[metric], 0);
+  return metrics.reduce((sum, metric) => sum + Math.abs(p[metric] - d[metric].value), 0);
 }
 
 /** Returns the closest matching distro for the given set of questions and answers */
