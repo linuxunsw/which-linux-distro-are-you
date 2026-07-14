@@ -26,11 +26,16 @@ const questions: Question[] = [
     },
   },
   {
+<<<<<<< HEAD
     id: 'group-project',
     q: "I swear to god I'm the only one keeping my group assignment afloat.",
+=======
+    q: "I'm always the one solo carrying my group assignments. My teammates are useless.",
+>>>>>>> 5329dc8 (Update questions.ts: Balance changes + new questions)
     buffs: {
       disorganised: -4,
       reliable: 4,
+      judgmental: 2,
     },
   },
   {
@@ -43,11 +48,10 @@ const questions: Question[] = [
     },
   },
   {
-    id: '68',
-    q: '69 is a funnier number than 67',
-    bounds: ['67676767676767', 'Nice'],
+    q: 'I believe that 69 is a funnier number than 67',
+    bounds: ['67 🤪', '69? Nice.'],
     buffs: {
-      unc: 5,
+      unc: 3,
       // 69 is a much older meme now
       memetic: -2,
       earlyAdopter: -1,
@@ -58,8 +62,8 @@ const questions: Question[] = [
     q: 'Did you just lose the game?',
     bounds: ['what?', 'GOD DAMN IT!'],
     buffs: {
-      memetic: 5,
-      unc: 3,
+      memetic: 3,
+      unc: 2,
     },
   },
   {
@@ -88,6 +92,7 @@ const questions: Question[] = [
     buffs: {
       diy: 3,
       unc: 1,
+      reliable: 1,
     },
   },
   {
@@ -95,9 +100,9 @@ const questions: Question[] = [
     q: 'I sometimes scroll through every setting on a device so I can adjust everything',
     bounds: ['I have no preferences', 'My configurations are a work of art'],
     buffs: {
-      diy: 2,
-      judgmental: 3,
-      disorganised: -1,
+      diy: 3,
+      judgmental: 2,
+      disorganised: -2,
     },
   },
   {
@@ -122,6 +127,34 @@ const questions: Question[] = [
       judgmental: 3,
       earlyAdopter: 1,
       diy: 2,
+    },
+  },
+  {
+    id: 'milk',
+    q: 'My best friend just told me that they always pour in milk before their cereal.',
+    bounds: ['LOL I totally get where you are coming from.', 'Disgusting. Blocked on all platforms immediately.'],
+    buffs: {
+      judgmental: 4,
+      reliable: -1,
+      memetic: 2,
+    },
+  },
+  {
+    id: 'cookie',
+    q: 'I dropped my cookie on the ground and just picked it back up.',
+    bounds: ["Nah, I'd eat.", "I'm not eating that, straight to the bin"],
+    buffs: {
+      judgmental: 2,
+      reliable: 3,
+      memetic: -1,
+      disorganised: -1,
+    },
+  },
+  {
+    q: "[insert qn here]",
+    bounds: ["", ""],
+    buffs: {
+      
     },
   },
   // TODO: More
