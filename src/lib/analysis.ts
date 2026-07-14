@@ -14,7 +14,7 @@ export type QandA = {
 export type Personality = Record<Metric, number>;
 
 /** Returns an empty personality, with no defined traits */
-function defaultPersonality(): Personality {
+export function defaultPersonality(): Personality {
   return {
     diy: 0,
     disorganised: 0,

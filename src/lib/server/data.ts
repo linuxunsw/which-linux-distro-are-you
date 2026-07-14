@@ -21,7 +21,8 @@ export type ResponseStats = {
    * Set of answers submitted by users.
    *
    * - Each key is a question ID.
-   * - Each value is an array of the corresponding answers (scale of 0-4 inclusive)
+   * - Each value is an array of the corresponding answers (scale of 0-4 inclusive).
+   *   Eg: [0, 1, 2] would indicate that the first user selected `1`, the second selected `2`, etc.
    */
   qandas: Record<string, number[]>,
 };
