@@ -27,11 +27,15 @@ const questions: Question[] = [
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     id: 'group-project',
     q: "I swear to god I'm the only one keeping my group assignment afloat.",
 =======
     q: "I'm always the one solo carrying my group assignments. My teammates are useless.",
 >>>>>>> 5329dc8 (Update questions.ts: Balance changes + new questions)
+=======
+    q: "I swear I'm the only one keeping my group assignment afloat. My teammates are useless.",
+>>>>>>> ac970e2 (fix: tidy up questions)
     buffs: {
       disorganised: -4,
       reliable: 4,
@@ -48,8 +52,8 @@ const questions: Question[] = [
     },
   },
   {
-    q: 'I believe that 69 is a funnier number than 67',
-    bounds: ['67 🤪', '69? Nice.'],
+    q: '69 is a funnier number than 67',
+    bounds: ['67 🤪', '69? Nice'],
     buffs: {
       unc: 3,
       // 69 is a much older meme now
@@ -58,9 +62,17 @@ const questions: Question[] = [
     },
   },
   {
+<<<<<<< HEAD
     id: 'the-game',
     q: 'Did you just lose the game?',
     bounds: ['what?', 'GOD DAMN IT!'],
+=======
+    q: 'Did you just lose the game?',
+    bounds: ['what does this mean?', 'GOD DAMN IT!'],
+    // q: 'I rage whenever I lose the games that I play.',
+    // bounds: ['Never, I like to keep my chill.', 'GOD DAMN IT! *Destroys the planet'],
+    //   //Other suggestions could be ["Never, I always take a chill pill", "I've replaced my set-up far too many times"]
+>>>>>>> ac970e2 (fix: tidy up questions)
     buffs: {
       memetic: 3,
       unc: 2,
@@ -131,8 +143,8 @@ const questions: Question[] = [
   },
   {
     id: 'milk',
-    q: 'My best friend just told me that they always pour in milk before their cereal.',
-    bounds: ['LOL I totally get where you are coming from.', 'Disgusting. Blocked on all platforms immediately.'],
+    q: 'Your thoughts on people who pour in milk before their cereal?',
+    bounds: ['This is cool and normal.', 'Disgusting. Blocked on all platforms immediately.'],
     buffs: {
       judgmental: 4,
       reliable: -1,
@@ -155,7 +167,7 @@ const questions: Question[] = [
   //   q: "[insert qn here]",
   //   bounds: ["", ""],
   //   buffs: {
-      
+  //     // Add some here. See src/lib/index.ts for a list of options.
   //   },
   // },
   // TODO: More
