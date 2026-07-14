@@ -150,13 +150,14 @@ const questions: Question[] = [
       disorganised: -1,
     },
   },
-  {
-    q: "[insert qn here]",
-    bounds: ["", ""],
-    buffs: {
+  // QUESTION TEMPLATE
+  // {
+  //   q: "[insert qn here]",
+  //   bounds: ["", ""],
+  //   buffs: {
       
-    },
-  },
+  //   },
+  // },
   // TODO: More
 ];
 
