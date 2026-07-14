@@ -81,7 +81,7 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 2,
-      rationale: 'You are judged by others, and don\'t like judging people.',
+      rationale: "You are judged by others, and don't like judging people.",
     },
   },
   {
