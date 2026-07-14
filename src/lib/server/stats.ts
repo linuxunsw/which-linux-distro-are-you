@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import type { Personality } from '$lib/analysis';
 import path from 'node:path';
 import { DATA_PATH } from './consts';
+import { dev } from '$app/environment';
 
 const STATS_FILE = path.join(DATA_PATH, 'stats.json');
 
@@ -37,6 +38,12 @@ async function loadData() {
 }
 
 export async function saveData(data: ResponseStats) {
+  // mkdir -p, ignoring errors
+  // NOTE: In production, this dir must already exist
+  if (dev) {
+    await fs.mkdir(DATA_PATH, { recursive: true }).catch(() => { });
+  }
+  // Now write the file
   await fs.writeFile(STATS_FILE, JSON.stringify(data));
 }
 
