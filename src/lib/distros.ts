@@ -77,7 +77,7 @@ const distros: Distro[] = [
     },
     reliable: {
       value: 6,
-      rationale: 'You enjoy tested and reliable things and don\'t like when things break.',
+      rationale: "You enjoy tested and reliable things and don't like when things break.",
     },
     judgmental: {
       value: 2,
