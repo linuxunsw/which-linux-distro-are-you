@@ -12,6 +12,11 @@ export type Distro = {
   id: string,
   /** Human-friendly name */
   name: string,
+  /**
+   * URL to Distro's official website. Allows users to check it out at the end of the quiz if they
+   * want.
+   */
+  url: string,
 } & Record<Metric, Rating>;
 
 // Please try to keep these alphabetised if you add more distros.
@@ -21,6 +26,7 @@ const distros: Distro[] = [
   {
     id: 'arch',
     name: 'Arch Linux',
+    url: 'https://archlinux.org/',
     diy: {
       value: 9,
       rationale: 'You like to do things yourself.',
@@ -55,6 +61,7 @@ const distros: Distro[] = [
   {
     id: 'debian',
     name: 'Debian',
+    url: 'https://www.debian.org/',
     diy: {
       value: 6,
       rationale: 'You like to keep things sensible and minimal',
@@ -90,6 +97,7 @@ const distros: Distro[] = [
   {
     id: 'fedora',
     name: 'Fedora Linux',
+    url: 'https://fedoraproject.org/',
     diy: {
       value: 5,
       rationale: 'diy',
@@ -125,6 +133,7 @@ const distros: Distro[] = [
   {
     id: 'gentoo',
     name: 'Gentoo Linux',
+    url: 'https://www.gentoo.org/',
     diy: {
       value: 10,
       rationale: "Are things even yours if you don't build them yourself?",
@@ -158,6 +167,7 @@ const distros: Distro[] = [
   {
     id: 'manjaro',
     name: 'Manjaro',
+    url: 'https://manjaro.org/',
     diy: {
       value: 6,
       rationale: 'diy',
@@ -192,7 +202,7 @@ const distros: Distro[] = [
   {
     id: 'mint',
     name: 'Mint',
-    url: '',
+    url: 'https://www.linuxmint.com/',
     diy: {
       value: 2,
       rationale: 'You change the wallpaper on your laptop and added a couple desklets',
@@ -225,6 +235,7 @@ const distros: Distro[] = [
   {
     id: 'nixos',
     name: 'NixOS',
+    url: 'https://nixos.org/',
     diy: {
       value: 10,
       rationale: 'Everything you create is a beautiful work of art. And it takes you so long to create it.',
@@ -261,6 +272,7 @@ const distros: Distro[] = [
   {
     id: 'slackware',
     name: 'Slackware',
+    url: 'http://www.slackware.com/',
     diy: {
       value: 7,
       rationale: 'Your todo lists are long and detailed, and by god they need to be.',
@@ -298,6 +310,7 @@ const distros: Distro[] = [
   {
     id: 'ubuntu',
     name: 'Ubuntu',
+    url: 'https://ubuntu.com/desktop',
     diy: {
       value: 1,
       rationale: 'You could at least change the wallpaper on your laptop',
