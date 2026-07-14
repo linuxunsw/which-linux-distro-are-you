@@ -26,16 +26,8 @@ const questions: Question[] = [
     },
   },
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
     id: 'group-project',
-    q: "I swear to god I'm the only one keeping my group assignment afloat.",
-=======
-    q: "I'm always the one solo carrying my group assignments. My teammates are useless.",
->>>>>>> 5329dc8 (Update questions.ts: Balance changes + new questions)
-=======
     q: "I swear I'm the only one keeping my group assignment afloat. My teammates are useless.",
->>>>>>> ac970e2 (fix: tidy up questions)
     buffs: {
       disorganised: -4,
       reliable: 4,
@@ -52,6 +44,7 @@ const questions: Question[] = [
     },
   },
   {
+    id: '68',
     q: '69 is a funnier number than 67',
     bounds: ['67 🤪', '69? Nice'],
     buffs: {
@@ -62,17 +55,12 @@ const questions: Question[] = [
     },
   },
   {
-<<<<<<< HEAD
     id: 'the-game',
-    q: 'Did you just lose the game?',
-    bounds: ['what?', 'GOD DAMN IT!'],
-=======
     q: 'Did you just lose the game?',
     bounds: ['what does this mean?', 'GOD DAMN IT!'],
     // q: 'I rage whenever I lose the games that I play.',
     // bounds: ['Never, I like to keep my chill.', 'GOD DAMN IT! *Destroys the planet'],
     //   //Other suggestions could be ["Never, I always take a chill pill", "I've replaced my set-up far too many times"]
->>>>>>> ac970e2 (fix: tidy up questions)
     buffs: {
       memetic: 3,
       unc: 2,
