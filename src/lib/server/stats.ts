@@ -20,6 +20,16 @@ type AveragePersonality = {
   value: Personality,
 };
 
+/**
+ * Summary of distro stats.
+ *
+ * Would look nice as a pie chart.
+ */
+type DistroFrequencies = {
+  kind: 'distros',
+  value: Record<string, number>,
+};
+
 type AnswerHistogram = [number, number, number, number, number];
 
 /**
@@ -37,26 +47,38 @@ type QuestionStats = {
   value: AnswerHistogram,
 };
 
-export type Statistic = Factoid | AveragePersonality | QuestionStats;
+export type Statistic = Factoid | AveragePersonality | DistroFrequencies | QuestionStats;
 
 export async function randomStatistic(): Promise<Statistic> {
   const data = await getData();
 
+  // We choose which kind of statistic to give randomly. Feel free to adjust these stats to make
+  // different kinds of statistics appear more/less often.
+  const CHANCE_PERSONALITY = 0.2;
+  const CHANCE_QUESTION_RESPONSE = 0.2;
+  const CHANCE_DISTROS = 0.3;
+  // Remainder are factoids
+
   const choice = Math.random();
 
-  if (choice < 0.3) {
+  if (choice < CHANCE_PERSONALITY) {
     // Personality statistics
     return {
       kind: 'personaility',
       value: averagePersonality(data),
     };
-  } else if (choice < 0.8) {
+  } else if (choice < CHANCE_PERSONALITY + CHANCE_QUESTION_RESPONSE) {
     // Info about a question response
     const question = sample(questions, 1)[0].id;
     return {
       kind: 'question',
       id: question,
       value: questionStats(question, data),
+    };
+  } else if (choice < CHANCE_PERSONALITY + CHANCE_QUESTION_RESPONSE + CHANCE_DISTROS) {
+    return {
+      kind: 'distros',
+      value: distroStats(data),
     };
   } else {
     const fact = sample(factoids, 1)[0](data);
@@ -71,6 +93,10 @@ export async function randomStatistic(): Promise<Statistic> {
 type FactoidGenerator = (data: ResponseStats) => string;
 
 const factoids: FactoidGenerator[] = [
+  /** Number of participants */
+  (data) => {
+    return `So far, ${data.length} people have taken this quiz!`;
+  },
   /** unc percent */
   (data) => {
     const uncableResults = data.filter(result => 'unc' in result.personality);
@@ -78,7 +104,21 @@ const factoids: FactoidGenerator[] = [
       / uncableResults.length;
     return `The average person is ${avg * 10}% unc.`;
   },
-  // TODO: More factoids
+  /** Group project primary contributors who are also judgmental */
+  (data) => {
+    // Submissions where the participant claims to be the main contributor of their group project
+    const groupProjectContribs = data
+      .filter(result => 'group-project' in result.qandas && result.qandas['group-project'] >= 3);
+
+    // Group project contributors with a high judgmental score
+    const judgementalContribs = groupProjectContribs
+      .filter(result => 'judgmental' in result.personality && result.personality.judgmental >= 5);
+
+    return `${judgementalContribs.length / groupProjectContribs.length * 100}% of group-project contributors are judgemental of others.`;
+  },
+  // TODO: More factoids. Some ideas:
+  // How many configaholics made the mistake of using an iPhone.
+  // Do people who think 69 is funny remember The Game?
 ];
 
 function averagePersonality(data: ResponseStats): Personality {
@@ -92,6 +132,14 @@ function averagePersonality(data: ResponseStats): Personality {
   }
 
   return personality;
+}
+
+function distroStats(data: ResponseStats) {
+  const distros: Record<string, number> = {};
+  for (const result of data) {
+    distros[result.distro] = (distros[result.distro] ?? 0) + 1;
+  }
+  return distros;
 }
 
 function questionStats(question: string, data: ResponseStats) {
