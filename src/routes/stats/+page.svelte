@@ -1,5 +1,22 @@
 <script lang="ts">
   import QrCode from '$lib/assets/qr-code.svg?raw';
+  import type { Statistic } from '$lib/server/stats';
+  import { createQuery } from '@tanstack/svelte-query';
+  import StatDisplay from './StatDisplay.svelte';
+
+  const refetchInterval = 10_000;
+
+  async function getStatistic(): Promise<Statistic> {
+    const res = await fetch('/api/stat');
+    const json = await res.json();
+    return json;
+  }
+
+  const query = createQuery<Statistic>(() => ({
+    queryKey: ['statistic'],
+    queryFn: async () => getStatistic(),
+    refetchInterval,
+  }));
 </script>
 
 <main>
@@ -11,8 +28,15 @@
     {@html QrCode}
   </div>
 
-  <div class="stats">
+  <div class="stats w-full">
     <!-- TODO: Display statistics here -->
+    {#if query.isLoading}
+      <p>Loading a statistic...</p>
+    {:else if query.error}
+      <p>Failed to load statistic: {query.error.message}</p>
+    {:else if query.isSuccess}
+      <StatDisplay statistic={query.data} />
+    {/if}
   </div>
 </main>
 
@@ -31,7 +55,7 @@
   }
 
   .qr {
-    width: 30rem;
+    width: 20rem;
     max-width: 90%;
   }
 

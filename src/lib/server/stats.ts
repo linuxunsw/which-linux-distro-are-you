@@ -30,21 +30,21 @@ type DistroFrequencies = {
   value: Record<string, number>;
 };
 
-type AnswerHistogram = [number, number, number, number, number];
+export type AnswerFrequencies = [number, number, number, number, number];
 
 /**
  * Info about the average responses to a particular question.
  *
  * Would be a good histogram?
  */
-type QuestionStats = {
+export type QuestionStats = {
   kind: 'question';
   /** ID of question that the statistics are about */
   id: string;
   /**
    * Array with frequencies for each choice. Index is the choice, value is the frequency.
    */
-  value: AnswerHistogram;
+  value: AnswerFrequencies;
 };
 
 export type Statistic = Factoid | AveragePersonality | DistroFrequencies | QuestionStats;
@@ -54,9 +54,9 @@ export async function randomStatistic(): Promise<Statistic> {
 
   // We choose which kind of statistic to give randomly. Feel free to adjust these stats to make
   // different kinds of statistics appear more/less often.
-  const CHANCE_PERSONALITY = 0.2;
-  const CHANCE_QUESTION_RESPONSE = 0.2;
-  const CHANCE_DISTROS = 0.3;
+  const CHANCE_PERSONALITY = 0.0;
+  const CHANCE_QUESTION_RESPONSE = 0.6;
+  const CHANCE_DISTROS = 0.0;
   // Remainder are factoids
 
   const choice = Math.random();
@@ -152,7 +152,7 @@ function distroStats(data: ResponseStats) {
 }
 
 function questionStats(question: string, data: ResponseStats) {
-  const frequencies: AnswerHistogram = [0, 0, 0, 0, 0];
+  const frequencies: AnswerFrequencies = [0, 0, 0, 0, 0];
   for (const result of data.filter((result) => question in result.qandas)) {
     const answer = result.qandas[question];
     frequencies[answer] = (frequencies[answer] ?? 0) + 1;
