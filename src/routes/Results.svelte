@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { getMatchingDistro, type QandA } from '$lib/analysis';
+  import { calculatePersonality, getMatchingDistro, type QandA } from '$lib/analysis';
   import * as Card from '$lib/components/ui/card/index.js';
   import { Button } from '$lib/components/ui/button/index.js';
+  import { onMount } from 'svelte';
 
   type Props = {
     qandas: QandA[];
@@ -10,6 +11,23 @@
   const { qandas, onreset }: Props = $props();
 
   const [distro, metric] = $derived(getMatchingDistro(qandas));
+  const personality = $derived(calculatePersonality(qandas));
+
+  const qandasForSubmit = $derived(Object.fromEntries(qandas.map(qanda => [qanda.q.id, qanda.a])))
+
+  onMount(async () => {
+    await fetch('/api/results', {
+      method: 'POST',
+      body: JSON.stringify({
+        distro: distro.id,
+        personality,
+        qandas: qandasForSubmit,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  })
 </script>
 
 <Card.Root class="w-full max-w-lg">

@@ -38,7 +38,7 @@ function metricRange(qandas: QandA[], metric: Metric): number {
 }
 
 /** Calculate personality from questions and answers */
-function calculatePersonality(qandas: QandA[]): Personality {
+export function calculatePersonality(qandas: QandA[]): Personality {
   const personality = qandas.reduce((personality, answer) => {
     const scaling = answer.a - 2;
     Object.entries(answer.q.buffs).forEach(([k, v]) => {
