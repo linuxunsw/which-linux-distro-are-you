@@ -5,8 +5,8 @@
   const defaultBounds = ['Disagree', 'Agree'] as const;
 
   type Props = {
-    q: Question,
-    onsubmit: (a: typeof allowedAnswers[number]) => void,
+    q: Question;
+    onsubmit: (a: (typeof allowedAnswers)[number]) => void;
   };
 
   const { q, onsubmit: onSubmit }: Props = $props();

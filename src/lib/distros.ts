@@ -2,21 +2,21 @@ import type { Metric } from '$lib';
 
 export type Rating = {
   /** 0-10 */
-  value: number,
+  value: number;
   /** Rationale, shown to users (description that matches the distro and the user) */
-  rationale: string,
+  rationale: string;
 };
 
 export type Distro = {
   /** Unique id */
-  id: string,
+  id: string;
   /** Human-friendly name */
-  name: string,
+  name: string;
   /**
    * URL to Distro's official website. Allows users to check it out at the end of the quiz if they
    * want.
    */
-  url: string,
+  url: string;
 } & Record<Metric, Rating>;
 
 // Please try to keep these alphabetised if you add more distros.
@@ -55,7 +55,8 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 9,
-      rationale: "It's ok that you push your opinions hard, because you're right (according to you)",
+      rationale:
+        "It's ok that you push your opinions hard, because you're right (according to you)",
     },
   },
   {
@@ -87,7 +88,8 @@ const distros: Distro[] = [
     // https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian
     reliable: {
       value: 5,
-      rationale: "You're great at familiar things, but become Frankenstein's Monster if new things are added",
+      rationale:
+        "You're great at familiar things, but become Frankenstein's Monster if new things are added",
     },
     judgmental: {
       value: 2,
@@ -145,7 +147,8 @@ const distros: Distro[] = [
     },
     earlyAdopter: {
       value: 9,
-      rationale: "If your computer was faster at code compilation, you'd be running up-to-date software.",
+      rationale:
+        "If your computer was faster at code compilation, you'd be running up-to-date software.",
     },
     memetic: {
       value: 0,
@@ -213,7 +216,8 @@ const distros: Distro[] = [
     },
     earlyAdopter: {
       value: 3,
-      rationale: 'You like your comfort zone and try not to explore too much if it can get dangerous',
+      rationale:
+        'You like your comfort zone and try not to explore too much if it can get dangerous',
     },
     memetic: {
       value: 1,
@@ -238,7 +242,8 @@ const distros: Distro[] = [
     url: 'https://nixos.org/',
     diy: {
       value: 10,
-      rationale: 'Everything you create is a beautiful work of art. And it takes you so long to create it.',
+      rationale:
+        'Everything you create is a beautiful work of art. And it takes you so long to create it.',
     },
     // They've had some pretty significant management disasters
     disorganised: {
@@ -324,11 +329,13 @@ const distros: Distro[] = [
     // dogfooding in 25.10 before it hit LTS...
     earlyAdopter: {
       value: 7,
-      rationale: "Maybe you don't need to try every new thing immediately. Like seriously, please stop.",
+      rationale:
+        "Maybe you don't need to try every new thing immediately. Like seriously, please stop.",
     },
     memetic: {
       value: 1,
-      rationale: 'Did you know: "Ubuntu" is a Nguni word meaning "I don\'t know how to install Debian".',
+      rationale:
+        'Did you know: "Ubuntu" is a Nguni word meaning "I don\'t know how to install Debian".',
     },
     // Has apt gotten any better recently?
     unc: {

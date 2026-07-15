@@ -5,9 +5,9 @@ import { assert, sample, shuffled } from './util';
 
 export type QandA = {
   /** Question being answered */
-  q: Question,
+  q: Question;
   /** Answer, as a range from 0-4 */
-  a: 0 | 1 | 2 | 3 | 4,
+  a: 0 | 1 | 2 | 3 | 4;
 };
 
 /** Total personality, combined from all metrics */

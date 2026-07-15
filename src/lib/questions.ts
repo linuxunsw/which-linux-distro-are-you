@@ -2,18 +2,18 @@ import type { Metric } from '$lib';
 
 export type Answer = {
   /** The answer text */
-  a: string,
+  a: string;
 };
 
 export type Question = {
   /** Unique ID, used for stats */
-  id: string,
+  id: string;
   /** The statement, which the user agrees/disagrees with */
-  q: string,
+  q: string;
   /** Text to place on the left/right of the scale. Defaults to `['Not me', 'Me']`. */
-  bounds?: [string, string],
+  bounds?: [string, string];
   /** The adjustments that selecting this answer makes to the player's point scores. */
-  buffs: Partial<Record<Metric, number>>,
+  buffs: Partial<Record<Metric, number>>;
 };
 
 const questions: Question[] = [
@@ -114,7 +114,10 @@ const questions: Question[] = [
   {
     id: 'opinionated',
     q: 'I already have an opinion on which distro best-matches my personality, and am seeking affirmation.',
-    bounds: ['Nope', 'I will be greatly upset if this internet quiz guesses my distro of choice wrong'],
+    bounds: [
+      'Nope',
+      'I will be greatly upset if this internet quiz guesses my distro of choice wrong',
+    ],
     buffs: {
       judgmental: 3,
       earlyAdopter: 1,
