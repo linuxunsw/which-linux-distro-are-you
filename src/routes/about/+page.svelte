@@ -2,15 +2,17 @@
 </script>
 
 <main>
-  <h1>Which Linux Distro Are You?</h1>
-
-  <p><i>Made with &lt;3 by the UNSW Linux Society</i></p>
+  <p><i>Made with &lt;3 by the <a href="https://linuxunsw.org" target="_blank">UNSW Linux Society</a></i></p>
 
   <ul>
     <li>Backend: Maddy Guthridge</li>
     <li>Frontend: FabledSaint</li>
     <li>Writing: Maddy Guthridge, SolarNugget, Justin Chiam</li>
   </ul>
+
+  <p>Source code on <a href="https://github.com/linuxunsw/which-linux-distro-are-you" target="_blank">
+    GitHub:LinuxUNSW/what-linux-distro-are-you
+  </a> (AGPL)</p>
 </main>
 
 <style>
@@ -19,17 +21,17 @@
     height: 100vh;
   }
 
+  a {
+    color: var(--primary);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
   main {
-    /* TODO: update once main UI code is merged */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px;
-    background-color: black;
-    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
   }
 
 </style>
