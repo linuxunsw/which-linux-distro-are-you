@@ -12,6 +12,11 @@ export type Distro = {
   id: string;
   /** Human-friendly name */
   name: string;
+  /**
+   * URL to Distro's official website. Allows users to check it out at the end of the quiz if they
+   * want.
+   */
+  url: string;
 } & Record<Metric, Rating>;
 
 // Please try to keep these alphabetised if you add more distros.
@@ -21,6 +26,7 @@ const distros: Distro[] = [
   {
     id: 'arch',
     name: 'Arch Linux',
+    url: 'https://archlinux.org/',
     diy: {
       value: 9,
       rationale: 'You like to do things yourself.',
@@ -56,6 +62,7 @@ const distros: Distro[] = [
   {
     id: 'mint',
     name: 'Mint',
+    url: 'https://www.linuxmint.com/',
     diy: {
       value: 2,
       rationale: 'You change the wallpaper on your laptop and added a couple desklets',
@@ -89,6 +96,7 @@ const distros: Distro[] = [
   {
     id: 'debian',
     name: 'Debian',
+    url: 'https://www.debian.org/',
     diy: {
       value: 6,
       rationale: 'You like to keep things sensible and minimal',
@@ -125,6 +133,7 @@ const distros: Distro[] = [
   {
     id: 'fedora',
     name: 'Fedora Linux',
+    url: 'https://fedoraproject.org/',
     diy: {
       value: 5,
       rationale: 'diy',
@@ -160,6 +169,7 @@ const distros: Distro[] = [
   {
     id: 'gentoo',
     name: 'Gentoo Linux',
+    url: 'https://www.gentoo.org/',
     diy: {
       value: 10,
       rationale: "Are things even yours if you don't build them yourself?",
@@ -194,6 +204,7 @@ const distros: Distro[] = [
   {
     id: 'manjaro',
     name: 'Manjaro',
+    url: 'https://manjaro.org/',
     diy: {
       value: 6,
       rationale: 'diy',
@@ -226,8 +237,43 @@ const distros: Distro[] = [
     },
   },
   {
+    id: 'mint',
+    name: 'Mint',
+    url: 'https://www.linuxmint.com/',
+    diy: {
+      value: 2,
+      rationale: 'You change the wallpaper on your laptop and added a couple desklets',
+    },
+    disorganised: {
+      value: 3,
+      rationale: "You don't really care about organisation, as long as it works for you.",
+    },
+    earlyAdopter: {
+      value: 3,
+      rationale:
+        'You like your comfort zone and try not to explore too much if it can get dangerous',
+    },
+    memetic: {
+      value: 1,
+      rationale: 'not sure what to put here',
+    },
+    unc: {
+      value: 4,
+      rationale: 'You are either a super unc, or you are a super newbie, no in-betweens.',
+    },
+    reliable: {
+      value: 6,
+      rationale: "You enjoy tested and reliable things and don't like when things break.",
+    },
+    judgmental: {
+      value: 2,
+      rationale: "You are judged by others, and don't like judging people.",
+    },
+  },
+  {
     id: 'nixos',
     name: 'NixOS',
+    url: 'https://nixos.org/',
     diy: {
       value: 10,
       rationale:
@@ -265,6 +311,8 @@ const distros: Distro[] = [
   {
     id: 'slackware',
     name: 'Slackware',
+    // Yes, you read that right, Slackware does not support HTTPS
+    url: 'http://www.slackware.com/',
     diy: {
       value: 7,
       rationale: 'Your todo lists are long and detailed, and by god they need to be.',
@@ -277,7 +325,7 @@ const distros: Distro[] = [
     // Slowest-moving distro ever?
     earlyAdopter: {
       value: 0,
-      rationale: 'Life was better in the 90s.',
+      rationale: 'Nobody can force you to have a secure website.',
     },
     memetic: {
       value: 0,
@@ -296,12 +344,13 @@ const distros: Distro[] = [
     judgmental: {
       // Maddy: found moderate judgment of people's decisions when I perused their subreddit.
       value: 3,
-      rationale: 'judgemental',
+      rationale: 'Some of your opinions probably should have changed since the 90s.',
     },
   },
   {
     id: 'ubuntu',
     name: 'Ubuntu',
+    url: 'https://ubuntu.com/desktop',
     diy: {
       value: 1,
       rationale: 'You could at least change the wallpaper on your laptop',
