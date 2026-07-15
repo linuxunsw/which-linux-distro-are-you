@@ -4,9 +4,12 @@
   import { sample } from '$lib/util';
   import Question from './Question.svelte';
   import Results from './Results.svelte';
+  import Welcome from './Welcome.svelte';
 
   let quiz = $state(sample(questions, 10));
   let qandas: QandA[] = $state([]);
+
+  let started = $state(false);
 
   function reset() {
     quiz = sample(questions, 10);
@@ -14,7 +17,9 @@
   }
 </script>
 
-{#if qandas.length < quiz.length}
+{#if !started}
+  <Welcome onstart={() => {started = true;}} />
+{:else if qandas.length < quiz.length}
   <Question
     qNum={qandas.length}
     q={quiz[qandas.length]}

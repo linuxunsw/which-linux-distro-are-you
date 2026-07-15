@@ -20,8 +20,24 @@
   </Card.Header>
   <Card.Content>
     <p class="text-base italic">{distro[metric].rationale || '???'}</p>
+    <p class="text-base">Don't worry, this is just a joke, we love you.</p>
+    <p class="text-base">If you found the joke funny, take a screenshot and share it.</p>
+    <p class="text-base">If you didn't find the joke funny, <a href="https://linuxunsw.org" target="_blank">join LinSoc</a> so we can apologise.</p>
   </Card.Content>
   <Card.Footer>
     <Button class="w-full md:w-auto md:ml-auto" size="lg" onclick={onreset}>Try again</Button>
   </Card.Footer>
 </Card.Root>
+
+<style>
+  p {
+    margin: 10px 0px;
+  }
+
+  a {
+    color: var(--primary);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
