@@ -12,6 +12,8 @@ export type Distro = {
   id: string;
   /** Human-friendly name */
   name: string;
+  /** Theme colour to use for this distro */
+  color: string;
   /**
    * URL to Distro's official website. Allows users to check it out at the end of the quiz if they
    * want.
@@ -27,6 +29,7 @@ const distros: Distro[] = [
     id: 'arch',
     name: 'Arch Linux',
     url: 'https://archlinux.org/',
+    color: '#1793D1',
     diy: {
       value: 9,
       rationale: 'You like to do things yourself.',
@@ -63,6 +66,7 @@ const distros: Distro[] = [
     id: 'mint',
     name: 'Mint',
     url: 'https://www.linuxmint.com/',
+    color: '#1793D1',
     diy: {
       value: 2,
       rationale: 'You change the wallpaper on your laptop and added a couple desklets',
@@ -97,6 +101,7 @@ const distros: Distro[] = [
     id: 'debian',
     name: 'Debian',
     url: 'https://www.debian.org/',
+    color: '#A80030',
     diy: {
       value: 6,
       rationale: 'You like to keep things sensible and minimal',
@@ -134,6 +139,7 @@ const distros: Distro[] = [
     id: 'fedora',
     name: 'Fedora Linux',
     url: 'https://fedoraproject.org/',
+    color: '#A80030',
     diy: {
       value: 5,
       rationale: "Just because your computer started off sensible, doesn't mean it stayed that way.",
@@ -170,6 +176,7 @@ const distros: Distro[] = [
     id: 'gentoo',
     name: 'Gentoo Linux',
     url: 'https://www.gentoo.org/',
+    color: '#433A62',
     diy: {
       value: 10,
       rationale: "Are things even yours if you don't build them yourself?",
@@ -205,6 +212,7 @@ const distros: Distro[] = [
     id: 'manjaro',
     name: 'Manjaro',
     url: 'https://manjaro.org/',
+    color: '#35BFA4',
     diy: {
       value: 6,
       rationale: 'You are larpmaxxing.',
@@ -240,6 +248,7 @@ const distros: Distro[] = [
     id: 'mint',
     name: 'Mint',
     url: 'https://www.linuxmint.com/',
+    color: '#347F4E',
     diy: {
       value: 2,
       rationale: 'You change the wallpaper on your laptop and added a couple desklets',
@@ -274,6 +283,7 @@ const distros: Distro[] = [
     id: 'nixos',
     name: 'NixOS',
     url: 'https://nixos.org/',
+    color: '#3B5487',
     diy: {
       value: 10,
       rationale:
@@ -313,6 +323,7 @@ const distros: Distro[] = [
     name: 'Slackware',
     // Yes, you read that right, Slackware does not support HTTPS
     url: 'http://www.slackware.com/',
+    color: '#697EB8',
     diy: {
       value: 7,
       rationale: 'Your todo lists are long and detailed, and by god they need to be.',
@@ -351,6 +362,7 @@ const distros: Distro[] = [
     id: 'ubuntu',
     name: 'Ubuntu',
     url: 'https://ubuntu.com/desktop',
+    color: '#B33C12',
     diy: {
       value: 1,
       rationale: 'You could at least change the wallpaper on your laptop',
