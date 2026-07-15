@@ -13,5 +13,7 @@
 <h2>Your match is {distro.name}</h2>
 
 <p><i>{distro[metric].rationale || '???'}</i></p>
+<p><i>{distro.summary || '???'}</i></p>
+<p>Find out more at: <a href={distro.url}>{distro.url || '???'}</a></p>
 
 <button onclick={onreset}>Try again</button>
