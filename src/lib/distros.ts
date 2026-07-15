@@ -78,7 +78,7 @@ const distros: Distro[] = [
     },
     memetic: {
       value: 1,
-      rationale: 'not sure what to put here',
+      rationale: 'It appears that you need to get better at memes.',
     },
     unc: {
       value: 4,
@@ -90,7 +90,7 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 2,
-      rationale: "You are judged by others, and don't like judging people.",
+      rationale: "You are judged by others, but don't like judging people.",
     },
   },
   {
@@ -127,7 +127,7 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 2,
-      rationale: 'judgemental',
+      rationale: "You hide your strong opinions on other people's computers deep down.",
     },
   },
   {
@@ -136,7 +136,7 @@ const distros: Distro[] = [
     url: 'https://fedoraproject.org/',
     diy: {
       value: 5,
-      rationale: 'diy',
+      rationale: "Just because your computer started off sensible, doesn't mean it stayed that way.",
     },
     disorganised: {
       value: 7,
@@ -163,7 +163,7 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 0,
-      rationale: 'judgemental',
+      rationale: 'Your opinions are so sane that they are boring.',
     },
   },
   {
@@ -176,8 +176,8 @@ const distros: Distro[] = [
     },
     // TODO
     disorganised: {
-      value: 0,
-      rationale: 'disorganised',
+      value: 2,
+      rationale: 'You have a lot of time on your hands.',
     },
     earlyAdopter: {
       value: 9,
@@ -185,16 +185,16 @@ const distros: Distro[] = [
         "If your computer was faster at code compilation, you'd be running up-to-date software.",
     },
     memetic: {
-      value: 0,
-      rationale: 'memetic',
+      value: 6,
+      rationale: 'You are easily influenced by online disinformation campaigns',
     },
     unc: {
-      value: 0,
-      rationale: 'unc',
+      value: 7,
+      rationale: "This is all you know, because you have not updated your computing practices since 1999.",
     },
     reliable: {
-      value: 8,
-      rationale: 'reliable',
+      value: 3,
+      rationale: "Flip a coin, and that shall determine whether you accomplish anything today.",
     },
     judgmental: {
       value: 7,
@@ -207,7 +207,7 @@ const distros: Distro[] = [
     url: 'https://manjaro.org/',
     diy: {
       value: 6,
-      rationale: 'diy',
+      rationale: 'You are larpmaxxing.',
     },
     // Forgetting to renew your SSL 3 times is very funny
     disorganised: {
@@ -216,11 +216,11 @@ const distros: Distro[] = [
     },
     earlyAdopter: {
       value: 9,
-      rationale: 'earlyAdopter',
+      rationale: 'You think that waiting 2 weeks is enough time for something to be stable.',
     },
     memetic: {
-      value: 3,
-      rationale: 'memetic',
+      value: 10,
+      rationale: 'You are excellent at memes, because you *are* the meme.',
     },
     // 14 years old
     unc: {
@@ -233,7 +233,7 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 0,
-      rationale: 'judgemental',
+      rationale: "You do not judge others because you fear their judgement.",
     },
   },
   {
@@ -255,7 +255,7 @@ const distros: Distro[] = [
     },
     memetic: {
       value: 1,
-      rationale: 'not sure what to put here',
+      rationale: 'Why be funny when you can be reliable?',
     },
     unc: {
       value: 4,
@@ -267,7 +267,7 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 2,
-      rationale: "You are judged by others, and don't like judging people.",
+      rationale: "You are judged by others, but don't like judging people.",
     },
   },
   {
@@ -289,8 +289,8 @@ const distros: Distro[] = [
       rationale: 'You like to put your own spin on new things.',
     },
     memetic: {
-      value: 0,
-      rationale: 'memetic',
+      value: 9,
+      rationale: 'Your deepest darkest desire is for NixOS to replace the "I use Arch btw" meme.',
     },
     // 20 years old, but the Nix language doesn't feel especially nice to work with, and the CLI
     // tools are not especially pleasant without 3rd-party wrappers.
@@ -305,7 +305,7 @@ const distros: Distro[] = [
     },
     judgmental: {
       value: 7,
-      rationale: "You think you know better than everyone (you're probably right)",
+      rationale: "You think you know better than everyone (you're probably right).",
     },
   },
   {
@@ -357,7 +357,7 @@ const distros: Distro[] = [
     },
     disorganised: {
       value: 4,
-      rationale: 'disorganised',
+      rationale: 'You are trying your best to be organised.',
     },
     // Rewriting all coreutils in rust, and making that the default with barely 6 months of
     // dogfooding in 25.10 before it hit LTS...
@@ -374,17 +374,17 @@ const distros: Distro[] = [
     // Has apt gotten any better recently?
     unc: {
       value: 5,
-      rationale: 'unc',
+      rationale: "Just because an idea was good 5 years ago doesn't mean it's still good.",
     },
     // Maddy personally ran into pretty significant issues when she used it. Idk if that matches
     // everyone else though.
     reliable: {
       value: 4,
-      rationale: 'reliable',
+      rationale: 'You want to be as reliable as Debian, but have not succeeded.',
     },
     judgmental: {
       value: 0,
-      rationale: 'judgemental',
+      rationale: "You do not judge others because you fear their judgement.",
     },
   },
 ];
