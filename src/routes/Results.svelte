@@ -19,8 +19,9 @@
     >
   </Card.Header>
   <Card.Content>
-    <p class="text-base italic">{distro[metric].rationale || '???'}</p>
-    <p class="text-base">Don't worry, this is just a joke, we love you.</p>
+    <p class="text-2xl text-center italic">{distro[metric].rationale || '???'}</p>
+    <br>
+    <p class="text-base">Don't worry, that was just a joke, we love you.</p>
     <p class="text-base">If you found the joke funny, take a screenshot and share it.</p>
     <p class="text-base">If you didn't find the joke funny, <a href="https://linuxunsw.org" target="_blank">join LinSoc</a> so we can apologise.</p>
   </Card.Content>
