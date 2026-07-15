@@ -10,7 +10,7 @@ export type Question = {
   id: string;
   /** The statement, which the user agrees/disagrees with */
   q: string;
-  /** Text to place on the left/right of the scale. Defaults to `['Not me', 'Me']`. */
+  /** Text to place on the left/right of the scale. Defaults to `['Disagree', 'Agree']`. */
   bounds?: [string, string];
   /** The adjustments that selecting this answer makes to the player's point scores. */
   buffs: Partial<Record<Metric, number>>;

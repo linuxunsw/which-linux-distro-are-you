@@ -16,6 +16,7 @@
 
 {#if qandas.length < quiz.length}
   <Question
+    qNum={qandas.length}
     q={quiz[qandas.length]}
     onsubmit={(a) => {
       qandas.push({

@@ -60,6 +60,40 @@ const distros: Distro[] = [
     },
   },
   {
+    id: 'mint',
+    name: 'Mint',
+    url: 'https://www.linuxmint.com/',
+    diy: {
+      value: 2,
+      rationale: 'You change the wallpaper on your laptop and added a couple desklets',
+    },
+    disorganised: {
+      value: 3,
+      rationale: "You don't really care about organisation, as long as it works for you.",
+    },
+    earlyAdopter: {
+      value: 3,
+      rationale:
+        'You like your comfort zone and try not to explore too much if it can get dangerous',
+    },
+    memetic: {
+      value: 1,
+      rationale: 'not sure what to put here',
+    },
+    unc: {
+      value: 4,
+      rationale: 'You are either a super unc, or you are a super newbie, no in-betweens.',
+    },
+    reliable: {
+      value: 6,
+      rationale: "You enjoy tested and reliable things and don't like when things break.",
+    },
+    judgmental: {
+      value: 2,
+      rationale: "You are judged by others, and don't like judging people.",
+    },
+  },
+  {
     id: 'debian',
     name: 'Debian',
     url: 'https://www.debian.org/',
