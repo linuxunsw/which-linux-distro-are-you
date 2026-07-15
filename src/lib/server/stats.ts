@@ -5,7 +5,7 @@ import { sample } from '$lib/util';
 import { getData, type ResponseStats } from './data';
 
 /** A factoid, such as "the average person is 50% unc" */
-type Factoid = {
+export type Factoid = {
   kind: 'factoid';
   value: string;
 };
@@ -15,7 +15,7 @@ type Factoid = {
  *
  * Would look nice as a radar chart.
  */
-type AveragePersonality = {
+export type AveragePersonality = {
   kind: 'personaility';
   value: Personality;
 };
@@ -25,7 +25,7 @@ type AveragePersonality = {
  *
  * Would look nice as a pie chart.
  */
-type DistroFrequencies = {
+export type DistroFrequencies = {
   kind: 'distros';
   value: Record<string, number>;
 };
@@ -55,8 +55,8 @@ export async function randomStatistic(): Promise<Statistic> {
   // We choose which kind of statistic to give randomly. Feel free to adjust these stats to make
   // different kinds of statistics appear more/less often.
   const CHANCE_PERSONALITY = 0.0;
-  const CHANCE_QUESTION_RESPONSE = 0.6;
-  const CHANCE_DISTROS = 0.0;
+  const CHANCE_QUESTION_RESPONSE = 0.5;
+  const CHANCE_DISTROS = 0.2;
   // Remainder are factoids
 
   const choice = Math.random();

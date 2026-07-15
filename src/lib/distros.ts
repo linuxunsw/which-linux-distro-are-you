@@ -246,7 +246,7 @@ const distros: Distro[] = [
   },
   {
     id: 'mint',
-    name: 'Mint',
+    name: 'Linux Mint',
     url: 'https://www.linuxmint.com/',
     color: '#347F4E',
     diy: {
