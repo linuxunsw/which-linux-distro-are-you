@@ -57,7 +57,7 @@ const questions: Question[] = [
   {
     id: 'the-game',
     q: 'Did you just lose the game?',
-    bounds: ['what does this mean?', 'GOD DAMN IT!'],
+    bounds: ['what does this mean?', 'DAMN IT! *Destroys the planet*'],
     // q: 'I rage whenever I lose the games that I play.',
     // bounds: ['Never, I like to keep my chill.', 'GOD DAMN IT! *Destroys the planet'],
     //   //Other suggestions could be ["Never, I always take a chill pill", "I've replaced my set-up far too many times"]
