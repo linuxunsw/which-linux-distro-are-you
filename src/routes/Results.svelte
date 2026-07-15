@@ -2,8 +2,8 @@
   import { getMatchingDistro, type QandA } from '$lib/analysis';
 
   type Props = {
-    qandas: QandA[],
-    onreset: () => void,
+    qandas: QandA[];
+    onreset: () => void;
   };
   const { qandas, onreset }: Props = $props();
 

@@ -6,8 +6,8 @@ import { getData, type ResponseStats } from './data';
 
 /** A factoid, such as "the average person is 50% unc" */
 type Factoid = {
-  kind: 'factoid',
-  value: string,
+  kind: 'factoid';
+  value: string;
 };
 
 /**
@@ -16,8 +16,8 @@ type Factoid = {
  * Would look nice as a radar chart.
  */
 type AveragePersonality = {
-  kind: 'personaility',
-  value: Personality,
+  kind: 'personaility';
+  value: Personality;
 };
 
 /**
@@ -26,8 +26,8 @@ type AveragePersonality = {
  * Would look nice as a pie chart.
  */
 type DistroFrequencies = {
-  kind: 'distros',
-  value: Record<string, number>,
+  kind: 'distros';
+  value: Record<string, number>;
 };
 
 type AnswerHistogram = [number, number, number, number, number];
@@ -38,13 +38,13 @@ type AnswerHistogram = [number, number, number, number, number];
  * Would be a good histogram?
  */
 type QuestionStats = {
-  kind: 'question',
+  kind: 'question';
   /** ID of question that the statistics are about */
-  id: string,
+  id: string;
   /**
    * Array with frequencies for each choice. Index is the choice, value is the frequency.
    */
-  value: AnswerHistogram,
+  value: AnswerHistogram;
 };
 
 export type Statistic = Factoid | AveragePersonality | DistroFrequencies | QuestionStats;
@@ -99,26 +99,29 @@ const factoids: FactoidGenerator[] = [
   },
   /** unc percent */
   (data) => {
-    const uncableResults = data.filter(result => 'unc' in result.personality);
-    const avg = uncableResults.reduce((sum, result) => sum + result.personality.unc, 0)
-      / uncableResults.length;
+    const uncableResults = data.filter((result) => 'unc' in result.personality);
+    const avg =
+      uncableResults.reduce((sum, result) => sum + result.personality.unc, 0) /
+      uncableResults.length;
     return `The average person is ${avg * 10}% unc.`;
   },
   /** Group project primary contributors who are also judgmental */
   (data) => {
     // Submissions where the participant claims to be the main contributor of their group project
-    const groupProjectContribs = data
-      .filter(result => 'group-project' in result.qandas && result.qandas['group-project'] >= 3);
+    const groupProjectContribs = data.filter(
+      (result) => 'group-project' in result.qandas && result.qandas['group-project'] >= 3,
+    );
 
     // Group project contributors with a high judgmental score
-    const judgementalContribs = groupProjectContribs
-      .filter(result => 'judgmental' in result.personality && result.personality.judgmental >= 5);
+    const judgementalContribs = groupProjectContribs.filter(
+      (result) => 'judgmental' in result.personality && result.personality.judgmental >= 5,
+    );
 
-    return `${judgementalContribs.length / groupProjectContribs.length * 100}% of group-project contributors are judgemental of others.`;
+    return `${(judgementalContribs.length / groupProjectContribs.length) * 100}% of group-project contributors are judgemental of others.`;
   },
   /** IKEA lover count */
   (data) => {
-    const ikeaLovers = data.filter(result => 'ikea' in result.qandas && result.qandas.ikea >= 3);
+    const ikeaLovers = data.filter((result) => 'ikea' in result.qandas && result.qandas.ikea >= 3);
     return `So far, ${ikeaLovers.length} IKEA fans have taken this quiz.`;
   },
   // TODO: More factoids. Some ideas:
@@ -131,10 +134,10 @@ function averagePersonality(data: ResponseStats): Personality {
   const personality = defaultPersonality();
 
   for (const metric of metrics) {
-    const resultsWithMetric = data.filter(result => metric in result.personality);
-    personality[metric] = resultsWithMetric
-      .reduce((sum, result) => sum + result.personality[metric], 0)
-      / resultsWithMetric.length;
+    const resultsWithMetric = data.filter((result) => metric in result.personality);
+    personality[metric] =
+      resultsWithMetric.reduce((sum, result) => sum + result.personality[metric], 0) /
+      resultsWithMetric.length;
   }
 
   return personality;
@@ -150,7 +153,7 @@ function distroStats(data: ResponseStats) {
 
 function questionStats(question: string, data: ResponseStats) {
   const frequencies: AnswerHistogram = [0, 0, 0, 0, 0];
-  for (const result of data.filter(result => question in result.qandas)) {
+  for (const result of data.filter((result) => question in result.qandas)) {
     const answer = result.qandas[question];
     frequencies[answer] = (frequencies[answer] ?? 0) + 1;
   }

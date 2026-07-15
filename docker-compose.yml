@@ -1,14 +1,14 @@
 services:
   wlday:
     build:
-      context: "."
+      context: '.'
     hostname: wlday
     restart: always
     ports:
       - 127.0.0.1:3000:3000/tcp
     volumes:
-      - "./data:/home/node/data:rw"
+      - './data:/home/node/data:rw'
     environment:
-      DATA_PATH: "/home/node/data"
+      DATA_PATH: '/home/node/data'
       HOST: 0.0.0.0
       PORT: 3000
