@@ -27,10 +27,11 @@ const questions: Question[] = [
   },
   {
     id: 'group-project',
-    q: "I swear to god I'm the only one keeping my group assignment afloat.",
+    q: "I swear I'm the only one keeping my group assignment afloat. My teammates are useless.",
     buffs: {
       disorganised: -4,
       reliable: 4,
+      judgmental: 2,
     },
   },
   {
@@ -45,9 +46,9 @@ const questions: Question[] = [
   {
     id: '68',
     q: '69 is a funnier number than 67',
-    bounds: ['67676767676767', 'Nice'],
+    bounds: ['67 🤪', '69? Nice'],
     buffs: {
-      unc: 5,
+      unc: 3,
       // 69 is a much older meme now
       memetic: -2,
       earlyAdopter: -1,
@@ -56,10 +57,13 @@ const questions: Question[] = [
   {
     id: 'the-game',
     q: 'Did you just lose the game?',
-    bounds: ['what?', 'GOD DAMN IT!'],
+    bounds: ['what does this mean?', 'GOD DAMN IT!'],
+    // q: 'I rage whenever I lose the games that I play.',
+    // bounds: ['Never, I like to keep my chill.', 'GOD DAMN IT! *Destroys the planet'],
+    //   //Other suggestions could be ["Never, I always take a chill pill", "I've replaced my set-up far too many times"]
     buffs: {
-      memetic: 5,
-      unc: 3,
+      memetic: 3,
+      unc: 2,
     },
   },
   {
@@ -88,6 +92,7 @@ const questions: Question[] = [
     buffs: {
       diy: 3,
       unc: 1,
+      reliable: 1,
     },
   },
   {
@@ -95,9 +100,9 @@ const questions: Question[] = [
     q: 'I sometimes scroll through every setting on a device so I can adjust everything',
     bounds: ['I have no preferences', 'My configurations are a work of art'],
     buffs: {
-      diy: 2,
-      judgmental: 3,
-      disorganised: -1,
+      diy: 3,
+      judgmental: 2,
+      disorganised: -2,
     },
   },
   {
@@ -124,6 +129,35 @@ const questions: Question[] = [
       diy: 2,
     },
   },
+  {
+    id: 'milk',
+    q: 'Your thoughts on people who pour in milk before their cereal?',
+    bounds: ['This is cool and normal.', 'Disgusting. Blocked on all platforms immediately.'],
+    buffs: {
+      judgmental: 4,
+      reliable: -1,
+      memetic: 2,
+    },
+  },
+  {
+    id: 'cookie',
+    q: 'I dropped my cookie on the ground and just picked it back up.',
+    bounds: ["Nah, I'd eat.", "I'm not eating that, straight to the bin"],
+    buffs: {
+      judgmental: 2,
+      reliable: 3,
+      memetic: -1,
+      disorganised: -1,
+    },
+  },
+  // QUESTION TEMPLATE
+  // {
+  //   q: "[insert qn here]",
+  //   bounds: ["", ""],
+  //   buffs: {
+  //     // Add some here. See src/lib/index.ts for a list of options.
+  //   },
+  // },
   // TODO: More
 ];
 

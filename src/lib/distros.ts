@@ -296,7 +296,7 @@ const distros: Distro[] = [
     // tools are not especially pleasant without 3rd-party wrappers.
     unc: {
       value: 8,
-      rationale: 'You might be painful to work with, but you get sh*t done.',
+      rationale: 'You might be painful to work with, but at least you get work done.',
     },
     // Basically impossible to break
     reliable: {
