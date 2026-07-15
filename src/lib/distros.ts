@@ -17,6 +17,8 @@ export type Distro = {
    * want.
    */
   url: string,
+  /** Summary shown in end screen (more detailed description of distro). */
+  summary: string,
 } & Record<Metric, Rating>;
 
 // Please try to keep these alphabetised if you add more distros.
@@ -27,6 +29,7 @@ const distros: Distro[] = [
     id: 'arch',
     name: 'Arch Linux',
     url: 'https://archlinux.org/',
+    summary: "Arch: You love to do things yourself to have everything fit your needs. You love using new technologies and innovations fresh before others even hear about them. Although your system breaks frequently without constant updates, you still never forget to let other linux users know how much superior your distribution is (arch btw).",
     diy: {
       value: 9,
       rationale: 'You like to do things yourself.',
@@ -62,6 +65,7 @@ const distros: Distro[] = [
     id: 'debian',
     name: 'Debian',
     url: 'https://www.debian.org/',
+    summary: "Debian: The second oldest distribution, known for its stability and reliability, you like your system to be mature and sensible like yourself. You are always meticulously on top of things and responsible, although you might be out of touch with the latest memes. You're great at familiar things, but become Frankenstein's Monster if new things are added.",
     diy: {
       value: 6,
       rationale: 'You like to keep things sensible and minimal',
@@ -98,6 +102,7 @@ const distros: Distro[] = [
     id: 'fedora',
     name: 'Fedora Linux',
     url: 'https://fedoraproject.org/',
+    summary: "Fedora: Tip your fedoras, because Fedora is your distribution. You are known to frequently miss deadlines (like every Fedora Linux release). Technology is constantly changing around you nowadays and you love exploring it, however you can't stop but to stay consistent with your principles.",
     diy: {
       value: 5,
       rationale: 'diy',
@@ -134,6 +139,7 @@ const distros: Distro[] = [
     id: 'gentoo',
     name: 'Gentoo Linux',
     url: 'https://www.gentoo.org/',
+    summary: "Gentoo: The a popular DIY style distro, Gentoo Linux. If you didn't build it yourself, you don't truly call it yours. Although you are an organised person, sometimes you forget to put on deodorant in the morning. Despite this, people believe you are very reliable and your group teammates diagnose you with 'control freak'.",
     diy: {
       value: 10,
       rationale: "Are things even yours if you don't build them yourself?",
@@ -168,6 +174,7 @@ const distros: Distro[] = [
     id: 'manjaro',
     name: 'Manjaro',
     url: 'https://manjaro.org/',
+    summary: "Manjaro: Despite being arch-based, you aren't fully aligned with the DIY philosophy and want a little more configured for you. You love adopting new technologies, despite them falling apart in your hands when you use them. Manjaro users are also known to be greatly disorganised (How long has it been since your last dentist appointment?).",
     diy: {
       value: 6,
       rationale: 'diy',
@@ -203,6 +210,7 @@ const distros: Distro[] = [
     id: 'mint',
     name: 'Mint',
     url: 'https://www.linuxmint.com/',
+    summary: "Mint: The classic \"newbie\" distro. You don't worry about the ins and outs of customisation (ricing) or the fact that people judge you for using the \"easy\" distro, you only care that your system is always running without any issues. You are either a super unc, or a super newbie, no in-betweens.",
     diy: {
       value: 2,
       rationale: 'You change the wallpaper on your laptop and added a couple desklets',
@@ -236,6 +244,7 @@ const distros: Distro[] = [
     id: 'nixos',
     name: 'NixOS',
     url: 'https://nixos.org/',
+    summary: "NixOS: A beautiful operating system, Nix is known to be incredibly customisable and modular, making it a reliable system for those who venture. Every thing you make is always beautiful, even if it takes you a long time to do so. You might be slow and painful, but you get stuff done your way. Despite being a very disorganised, you also like to think you are better than everyone else for using Nix.",
     diy: {
       value: 10,
       rationale: 'Everything you create is a beautiful work of art. And it takes you so long to create it.',
@@ -274,6 +283,7 @@ const distros: Distro[] = [
     name: 'Slackware',
     // Yes, you read that right, Slackware does not support HTTPS
     url: 'http://www.slackware.com/',
+    summary: "Slackware: Slackware, the oldest linux distribution. Your todo lists are long and detailed, and by god they need to be. Please I am begging you to tidy your files up. You strongly believe that life was better in the 90s. You are so unc, that if computers had floppy drives, you'd be using them.",
     diy: {
       value: 7,
       rationale: 'Your todo lists are long and detailed, and by god they need to be.',
@@ -312,6 +322,7 @@ const distros: Distro[] = [
     id: 'ubuntu',
     name: 'Ubuntu',
     url: 'https://ubuntu.com/desktop',
+    summary: "Ubuntu: A basic but still highly well known distribution, despite it losing a lot of its popularity in recent times. You don't care about customisation enough to even care about changing your wallpaper. You use this distribution because Sheldon Lee Cooper said it was his favourite Linux-based operating system. Did you know: \"Ubuntu\" is a Nguni word meaning \"I don't know how to install Debian.\"",
     diy: {
       value: 1,
       rationale: 'You could at least change the wallpaper on your laptop',
